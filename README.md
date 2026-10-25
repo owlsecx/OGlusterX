@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-GlusterFS configuration hardening auditor (volumes, volfiles, glusterd, TLS, gNFS, Ganesha-Gluster)
+OGlusterX — GlusterFS Configuration Hardening Auditor. It provides stdlib parsers for `gluster volume info`, `gluster volume get <vol> all`, /var/lib/glusterd/vols/*/info, *.vol volfiles, glusterd.vol, gsyncd.conf, glusterd.info, /etc/fstab and NFS-Ganesha EXPORT blocks (FSAL GLUSTER). Built-in demo/self-test paths and severity gates help validate detections without touching production when those flags are used.
 
 ---
 
@@ -30,10 +30,6 @@ GlusterFS configuration hardening auditor (volumes, volfiles, glusterd, TLS, gNF
 - Integrity — client / server quorum, replica & arbiter, bitrot scrubbing, self-heal, split-brain policies
 - Data exposure — trash, DEBUG/TRACE logs, brick perms, storage.owner-uid 0, plaintext brick credentials
 - Geo-replication root SSH / host-key verification
-- TLS key / CA / cert presence & permission checks
-- Secrets masked everywhere; --root discovery; CWE + MITRE
-- Export TXT / Markdown / JSON / CSV / SARIF 2.1.0
-- Self-test --demo, CI gates --fail-on / --min-severity
 
 ---
 
@@ -47,7 +43,10 @@ GlusterFS configuration hardening auditor (volumes, volfiles, glusterd, TLS, gNF
 ## 🚀 Usage
 
 ```bash
-./OGlusterX
+./OGlusterX                                     # interactive menu
+./OGlusterX --scan -r /path/to/root
+./OGlusterX --demo
+./OGlusterX --help
 ```
 
 ---
